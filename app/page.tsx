@@ -1,6 +1,11 @@
+"use client";
+
+import React, { useState } from "react";
 import * as motion from "motion/react-client"
 import { Square_Peg } from "next/font/google";
-
+import Video from 'next-video';
+import VideoBackground from "./VideoBackground";
+import Navbar from "./Navbar";
 
 {/* Define box size used for retail items */}
 const box = {
@@ -10,54 +15,31 @@ const box = {
 export default function Home() {
   return (
     // Navbar
-    <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
-    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a className="flex items-center space-x-3 rtl:space-x-reverse">
-        {/* Logo Image */}
-        <img src="thcasaplogo.png" className="" alt="" />
-        {/* Logo Text */}
-        <span className="self-center text-xl font-semibold font-sans whitespace-nowrap dark:text-white">THC-ASAP</span>
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-      <span className="sr-only">Open main menu</span>
-      {/* Mobile Menu */}
-      <svg className="w-10 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-      </button>
-      <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a href="" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-        </li>
-        <li>
-          <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-{/* End Of Mobile Menu */}
-{/* Product Holder 1 */}
-    <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
-    <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        <div className="overflow-y-hidden">
+        <Navbar />
+        <div>
+        <VideoBackground />
+        </div>
+        <div className="h-[800px] bg-gradient-to-r from-slate-900 to-slate-700 mb-10 rounded-md">
+          <h1 className="font-poppins text-6xl text-white opacity-50">Fast Delivery To </h1>
+        </div>
+        {/* Product Holder 1 */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-3">
+      <div className="relative w-[250px] h-[400px] mx-auto my-5 bg-gradient-to-br from-slate-50 to-gray-100 rounded-lg shadow-md overflow-y-hidden">
+      <motion.div
+        className="w-full flex justify-center pt-4"
         whileFocus={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
-    />
-    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+      />
+    <div className="w-full flex justify-center pt-4">
+      <img src="\permarker.webp" className="object-contain max-h-[200px]"/>
+    </div>
+     {/* Text */}
+     <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Permanent Marker THCA 3.5g 35%<br></br>$22.50</h1>
+    </div>
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none"> 
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart
         </span>
@@ -65,13 +47,20 @@ export default function Home() {
     </div>
     {/* Product Holder 2 */}    
     <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
     <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        className="w-full flex justify-center pt-4"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
-    />
+      />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/Oreoz.png" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Oreoz 3.5g - 22.81% THCA Flower<br></br>$19.99</h1>
+    </div>
     <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart
@@ -81,13 +70,20 @@ export default function Home() {
     </div>
     {/* Product Holder 3 */}
     <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
     <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        className="w-full flex justify-center pt-4"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
     />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/trehousepeach.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">TRĒ House 3.5g THCA Live Rosin Vape - Texas Peach Cobbler<br></br>$29.99</h1>
+    </div>
     <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart
@@ -97,13 +93,20 @@ export default function Home() {
     </div>
     {/* Product Holder 4 */}
     <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
     <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        className="w-full flex justify-center pt-4"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
     />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/GrapeGuava.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">TRĒ House 3.5g THCA Live Rosin Vape - Grape Guava<br></br>$29.99</h1>
+    </div>
     <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart
@@ -113,13 +116,20 @@ export default function Home() {
     </div>
     {/* Product Holder 5 */}
     <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
     <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        className="w-full flex justify-center pt-4"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
     />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/BlueberrySlushie.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">TRĒ House 3.5g THCA Live Rosin Vape - Blueberry Slushie<br></br>$29.99</h1>
+    </div>
     <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart
@@ -129,13 +139,20 @@ export default function Home() {
     </div>
     {/* Product Holder 6 */}
     <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
     <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        className="w-full flex justify-center pt-4"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
     />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/1gdabhinature.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Hi On Nature 1g THCA + THCP Diamond Dabs - Slurricane<br></br>$22.50</h1>
+    </div>
     <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart
@@ -145,13 +162,112 @@ export default function Home() {
     </div>
     {/* Product Holder 7 */}
     <div>
-    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
     <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        className="w-full flex justify-center pt-4"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 1.1 }}
         style={box}
     />
+    <div className="w-full flex justify-center pt-4">
+    <img src="/thcaedibles.jpg" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">TRĒ House Delta 8 Gummies w/ HHC & THCP - Tropical Mango<br></br>26.99</h1>
+    </div>
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 8 */}    
+    <div>
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
+    <motion.div
+        className="w-full flex justify-center pt-4"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/Litty.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Litty 5g THCA Signature Blend Vape - Baja Blast<br></br>$31.99 USD</h1>
+    </div>
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 9 */}    
+    <div>
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
+    <motion.div
+        className="w-full flex justify-center pt-4"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/SkywalkerOG.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Torch 5g THCA Live Rosin Disposable Vape - Skywalker OG<br></br>$31.99</h1>
+    </div>
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 10 */}    
+    <div>
+    <div className="relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
+    <motion.div
+        className="w-full flex justify-center pt-4"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/GorillaGlue.webp" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Big High 5g THCA Disposable Vape - Gorilla Glue<br></br>$27.99</h1>
+    </div>
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 11 */}    
+    <div>
+    <div className="hidden relative w-[250px] h-[400px] mx-auto my-5 shadow-md">
+    <motion.div
+        className="w-full flex justify-center pt-4"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <div className="w-full flex justify-center pt-4">
+      <img src="/Oreoz.png" className="object-contain max-h-[200px]"/>
+    </div>
+    {/* Text */}
+    <div className="w-full text-center mt-4">
+      <h1 className="text-gray-800 text-md">Permanent Marker<br></br>THCA 35%</h1>
+    </div>
     <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
         <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Add to Cart

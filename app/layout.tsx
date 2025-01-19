@@ -1,7 +1,24 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local"; // Import the local font utility
 import "./globals.css";
 
+// Local font configuration for Poppins
+const poppins = localFont({
+  src: [
+    {
+      path: "./fonts/Poppins-Regular.ttf", // Use public folder path
+      weight: "400",
+    },
+    {
+      path: "/fonts/Poppins-Bold.ttf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-poppins", // Define a CSS variable for the font
+});
+
+// Google fonts (Geist Sans and Mono)
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
