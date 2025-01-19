@@ -1,31 +1,29 @@
 import * as motion from "motion/react-client"
 import { Square_Peg } from "next/font/google";
 
+
 {/* Define box size used for retail items */}
 const box = {
-  width: 100,
-  height: 100,
-  backgroundColor: "white",
   borderRadius: 5,
 }
 
 export default function Home() {
-  return ( 
+  return (
     // Navbar
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a className="flex items-center space-x-3 rtl:space-x-reverse">
         {/* Logo Image */}
-        <img src="" className="h-8" alt="" />
+        <img src="thcasaplogo.png" className="" alt="" />
         {/* Logo Text */}
-        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">THC-ASAP</span>
+        <span className="self-center text-xl font-semibold font-sans whitespace-nowrap dark:text-white">THC-ASAP</span>
       </a>
       <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
       <span className="sr-only">Open main menu</span>
       {/* Mobile Menu */}
       <svg className="w-10 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
       </button>
       <div className="hidden w-full md:block md:w-auto" id="navbar-default">
@@ -49,27 +47,117 @@ export default function Home() {
     </div>
   </div>
 </nav>
-
-<motion.div
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.8 }}
-            style={box}
-        />
-      {/* End of first Navbar */}
-      {/* Floating Navbar top start */}
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      <div>
-      <div>
-      <div className=" h-[50px] bg-gradient-to-r from-purple-300 via-pink-400 to-red-400 flex items-center justify-between my-6 mx-4 px-4 py-1 rounded-md shadow-lg">
-        {/* title */}
-        <span className=" text-white text-2xl font-fun">THC-Asap</span>
-        {/* button */}
-        <div className=" bg-white py-1 px-2 inline rounded-md">
-          <a href="https://twitter.com/4real_Dev" target="_blank" rel="noopener noreferrer">
-            <span className=" font-mono text-base font-light cursor-pointer"></span>
-          </a>
-        </div>
-      </div>
+{/* End Of Mobile Menu */}
+{/* Product Holder 1 */}
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileFocus={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    {/* Product Holder 2 */}    
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 3 */}
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 4 */}
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 5 */}
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 6 */}
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
+    </div>
+    {/* Product Holder 7 */}
+    <div>
+    <div className="relative w-[250px] h-[200px] mx-auto my-5 bg-gradient-to-r from-teal-200 to-teal-500">
+    <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-teal-200 to-teal-500"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+        style={box}
+    />
+    <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:outline-none">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Add to Cart
+        </span>
+    </button>
+    </div>
     </div>
     </div>
     </div>
